@@ -75,6 +75,10 @@ class IntentRequestBuilder extends RequestBuilder_1.RequestBuilder {
         this.confirmationStatus = confirmationStatus;
         return this;
     }
+    withDialogState(dialogState) {
+        this.dialogState = dialogState;
+        return this;
+    }
     buildRequest() {
         return {
             type: 'IntentRequest',
@@ -86,7 +90,7 @@ class IntentRequestBuilder extends RequestBuilder_1.RequestBuilder {
                 slots: this.slots,
                 confirmationStatus: this.confirmationStatus,
             },
-            dialogState: undefined,
+            dialogState: this.dialogState,
         };
     }
 }
