@@ -107,6 +107,7 @@ export interface PlayStreamConfig {
     token?: string;
     previousToken?: string;
     url?: string;
+    urlExactMatch?: boolean;
     offset?: number;
 }
 export interface PlayVideoConfig {

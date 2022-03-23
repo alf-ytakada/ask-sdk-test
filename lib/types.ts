@@ -114,7 +114,7 @@ export interface PlayStreamConfig {
     token? : string;
     previousToken? : string;
     url? : string;
-    urlExactMatch?: boolean;
+    urlExactMatch? : boolean;
     offset? : number;
 }
 

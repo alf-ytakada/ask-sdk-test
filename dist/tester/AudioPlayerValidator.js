@@ -23,7 +23,12 @@ class AudioPlayerValidator extends types_1.ResponseValidator {
             if (!stream.url.startsWith('https://')) {
                 assert_1.fail('the stream URL is not https');
             }
-            chai_1.expect(stream.url).to.be.equal(playConfig.url, 'stream URL did not match');
+            if (playConfig.urlExactMatch) {
+                chai_1.expect(stream.url).to.be.equal(playConfig.url, 'stream URL did not match');
+            }
+            else {
+                chai_1.expect(stream.url).to.be.not.null;
+            }
             if (playConfig.token) {
                 chai_1.expect(stream.token).to.be.equal(playConfig.token, 'token did not match');
             }
