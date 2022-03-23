@@ -25,7 +25,11 @@ export class AudioPlayerValidator extends ResponseValidator {
             if (!stream.url.startsWith('https://')) {
                 fail('the stream URL is not https');
             }
-            expect(stream.url).to.be.equal(playConfig.url, 'stream URL did not match');
+            if (playConfig.urlExactMatch) {
+                expect(stream.url).to.be.equal(playConfig.url, 'stream URL did not match');
+            } else {
+                expect(stream.url).to.be.not.null;
+            }
 
             if (playConfig.token) {
                 expect(stream.token).to.be.equal(playConfig.token, 'token did not match');
