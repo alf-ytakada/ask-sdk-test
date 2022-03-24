@@ -102,6 +102,15 @@ export interface RenderDocumentConfig {
         [key: string]: (datasource: any) => boolean;
     };
 }
+export interface AudioMetadata {
+    title: string;
+    subtitle: string;
+    art?: {
+        sources: Array<{
+            url: string;
+        }>;
+    };
+}
 export interface PlayStreamConfig {
     behavior?: string;
     token?: string;
@@ -109,6 +118,7 @@ export interface PlayStreamConfig {
     url?: string;
     urlExactMatch?: boolean;
     offset?: number;
+    metadata?: AudioMetadata;
 }
 export interface PlayVideoConfig {
     source?: string;

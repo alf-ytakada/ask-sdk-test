@@ -40,6 +40,14 @@ export class AudioPlayerValidator extends ResponseValidator {
             if (playConfig.offset || playConfig.offset === 0) {
                 expect(stream.offsetInMilliseconds).to.be.equal(playConfig.offset, 'stream offset did not match');
             }
+
+            // check metadata
+            if (playConfig.metadata) {
+                const metadata = playDirective.audioItem.metadata;
+                expect(metadata.title).to.be.equal(playConfig.metadata.title, 'metadata title did not match');
+                expect(metadata.subtitle).to.be.equal(playConfig.metadata.subtitle, 'metadata subtitle did not match');
+                expect(metadata.art).to.be.equal(playConfig.metadata.art, 'metadata art did not match');
+            }
         }
 
         if (currentItem.stopsStream) {

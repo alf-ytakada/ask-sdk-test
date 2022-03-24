@@ -38,6 +38,13 @@ class AudioPlayerValidator extends types_1.ResponseValidator {
             if (playConfig.offset || playConfig.offset === 0) {
                 chai_1.expect(stream.offsetInMilliseconds).to.be.equal(playConfig.offset, 'stream offset did not match');
             }
+            // check metadata
+            if (playConfig.metadata) {
+                const metadata = playDirective.audioItem.metadata;
+                chai_1.expect(metadata.title).to.be.equal(playConfig.metadata.title, 'metadata title did not match');
+                chai_1.expect(metadata.subtitle).to.be.equal(playConfig.metadata.subtitle, 'metadata subtitle did not match');
+                chai_1.expect(metadata.art).to.be.equal(playConfig.metadata.art, 'metadata art did not match');
+            }
         }
         if (currentItem.stopsStream) {
             if (!response.response.directives || !response.response.directives.find((value) => value.type === 'AudioPlayer.Stop')) {

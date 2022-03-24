@@ -109,6 +109,17 @@ export interface RenderDocumentConfig {
     hasDataSources? : { [key : string] : (datasource : any) => boolean };
 }
 
+export interface AudioMetadata {
+  title : string;
+  subtitle : string;
+  // https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/models/ask_sdk_model.interfaces.audioplayer.html#ask_sdk_model.interfaces.audioplayer.audio_item_metadata.AudioItemMetadata
+  art? : {
+    sources : Array<{
+      url : string;
+    }>;
+  };
+}
+
 export interface PlayStreamConfig {
     behavior? : string;
     token? : string;
@@ -116,6 +127,7 @@ export interface PlayStreamConfig {
     url? : string;
     urlExactMatch? : boolean;
     offset? : number;
+    metadata? : AudioMetadata;
 }
 
 export interface PlayVideoConfig {
