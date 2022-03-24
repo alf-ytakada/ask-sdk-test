@@ -43,7 +43,7 @@ class AudioPlayerValidator extends types_1.ResponseValidator {
                 const metadata = playDirective.audioItem.metadata;
                 chai_1.expect(metadata.title).to.be.equal(playConfig.metadata.title, 'metadata title did not match');
                 chai_1.expect(metadata.subtitle).to.be.equal(playConfig.metadata.subtitle, 'metadata subtitle did not match');
-                chai_1.expect(metadata.art).to.be.equal(playConfig.metadata.art, 'metadata art did not match');
+                chai_1.expect(metadata.art).to.be.deep.equal(playConfig.metadata.art, 'metadata art did not match');
             }
         }
         if (currentItem.stopsStream) {
