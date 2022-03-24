@@ -93,11 +93,17 @@ export class CardValidator extends ResponseValidator {
             }
         }
 
-        if (currentItem.hasLinkAccountCard) {
-            if (!response.response.card) {
-                fail('the response did not contain a card');
-            } else if (response.response.card.type !== 'LinkAccount') {
-                fail('the card in the response was not a link account card');
+        if (currentItem.hasLinkAccountCard !== undefined) {
+            if (currentItem.hasLinkAccountCard) {
+                if (!response.response.card) {
+                    fail('the response did not contain a card');
+                } else if (response.response.card.type !== 'LinkAccount') {
+                    fail('the card in the response was not a link account card');
+                }
+            } else {
+                if (response.response.card?.type === 'LinkAccount') {
+                    fail('do not contain a link account card');
+                }
             }
         }
     }

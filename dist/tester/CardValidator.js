@@ -19,6 +19,7 @@ class CardValidator extends types_1.ResponseValidator {
     hasSmallImageUrlLike? : string;
     hasLargeImageUrlLike? : string;
          */
+        var _a;
         if (currentItem.hasCardTitle) {
             if (!response.response.card || (response.response.card.type !== 'Simple' && response.response.card.type !== 'Standard')) {
                 assert_1.fail('the response did not contain a card');
@@ -99,12 +100,19 @@ class CardValidator extends types_1.ResponseValidator {
                 chai_1.expect(response.response.card.image.largeImageUrl.indexOf(currentItem.hasLargeImageUrlLike) >= 0, 'Card large image did not contain specified URL').to.be.true;
             }
         }
-        if (currentItem.hasLinkAccountCard) {
-            if (!response.response.card) {
-                assert_1.fail('the response did not contain a card');
+        if (currentItem.hasLinkAccountCard !== undefined) {
+            if (currentItem.hasLinkAccountCard) {
+                if (!response.response.card) {
+                    assert_1.fail('the response did not contain a card');
+                }
+                else if (response.response.card.type !== 'LinkAccount') {
+                    assert_1.fail('the card in the response was not a link account card');
+                }
             }
-            else if (response.response.card.type !== 'LinkAccount') {
-                assert_1.fail('the card in the response was not a link account card');
+            else {
+                if (((_a = response.response.card) === null || _a === void 0 ? void 0 : _a.type) === 'LinkAccount') {
+                    assert_1.fail('do not contain a link account card');
+                }
             }
         }
     }
