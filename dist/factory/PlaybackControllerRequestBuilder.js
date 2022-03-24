@@ -11,6 +11,33 @@ class PlaybackControllerRequestBuilder extends RequestBuilder_1.RequestBuilder {
         super(settings);
         this.type = type;
     }
+    withToken(token) {
+        this.token = token;
+        return this;
+    }
+    withOffset(offset) {
+        this.offset = offset;
+        return this;
+    }
+    withCurrentActivity(activity) {
+        this.activity = activity;
+        return this;
+    }
+    modifyRequest(request) {
+        super.modifyRequest(request);
+        if (!request.context.AudioPlayer) {
+            request.context.AudioPlayer = {};
+        }
+        if (this.token) {
+            request.context.AudioPlayer.token = this.token;
+        }
+        if (this.offset) {
+            request.context.AudioPlayer.offsetInMilliseconds = this.offset;
+        }
+        if (this.activity) {
+            request.context.AudioPlayer.playerActivity = this.activity;
+        }
+    }
     buildRequest() {
         return {
             type: this.type,
