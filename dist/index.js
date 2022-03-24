@@ -3,7 +3,7 @@
  * Copyright (c) 2018. Taimos GmbH http://www.taimos.de
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResponseValidator = exports.AplUserEventRequestBuilder = exports.AudioPlayerResumeIntentRequestBuilder = exports.AudioPlayerPauseIntentRequestBuilder = exports.SessionEndedRequestBuilder = exports.LaunchRequestBuilder = exports.IntentRequestBuilder = exports.RequestBuilder = exports.AlexaTest = void 0;
+exports.ResponseValidator = exports.PlaybackControllerRequestBuilder = exports.AplUserEventRequestBuilder = exports.AudioPlayerResumeIntentRequestBuilder = exports.AudioPlayerPauseIntentRequestBuilder = exports.SessionEndedRequestBuilder = exports.LaunchRequestBuilder = exports.IntentRequestBuilder = exports.RequestBuilder = exports.AlexaTest = void 0;
 var AlexaTest_1 = require("./tester/AlexaTest");
 Object.defineProperty(exports, "AlexaTest", { enumerable: true, get: function () { return AlexaTest_1.AlexaTest; } });
 var RequestBuilder_1 = require("./factory/RequestBuilder");
@@ -19,6 +19,8 @@ Object.defineProperty(exports, "AudioPlayerPauseIntentRequestBuilder", { enumera
 Object.defineProperty(exports, "AudioPlayerResumeIntentRequestBuilder", { enumerable: true, get: function () { return AudioIntentRequestBuilder_1.AudioPlayerResumeIntentRequestBuilder; } });
 var AplUserEventRequestBuilder_1 = require("./factory/AplUserEventRequestBuilder");
 Object.defineProperty(exports, "AplUserEventRequestBuilder", { enumerable: true, get: function () { return AplUserEventRequestBuilder_1.AplUserEventRequestBuilder; } });
+var PlaybackControllerRequestBuilder_1 = require("./factory/PlaybackControllerRequestBuilder");
+Object.defineProperty(exports, "PlaybackControllerRequestBuilder", { enumerable: true, get: function () { return PlaybackControllerRequestBuilder_1.PlaybackControllerRequestBuilder; } });
 var types_1 = require("./types");
 Object.defineProperty(exports, "ResponseValidator", { enumerable: true, get: function () { return types_1.ResponseValidator; } });
 //# sourceMappingURL=index.js.map
