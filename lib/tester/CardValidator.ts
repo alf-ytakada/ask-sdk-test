@@ -92,6 +92,14 @@ export class CardValidator extends ResponseValidator {
                 expect(response.response.card.image.largeImageUrl.indexOf(currentItem.hasLargeImageUrlLike) >= 0, 'Card large image did not contain specified URL').to.be.true;
             }
         }
+
+        if (currentItem.hasLinkAccountCard) {
+            if (!response.response.card) {
+                fail('the response did not contain a card');
+            } else if (response.response.card.type !== 'LinkAccount') {
+                fail('the card in the response was not a link account card');
+            }
+        }
     }
 
 }

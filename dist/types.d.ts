@@ -78,6 +78,8 @@ export interface SequenceItem {
     hasSmallImageUrlLike?: string;
     /** Tests that the card sent by the response is a standard card and has a large image URL containing the string specified. */
     hasLargeImageUrlLike?: string;
+    /** card.type = LinkAccount */
+    hasLinkAccountCard?: boolean;
     /** Tests that the AudioPlayer is used to play a stream. */
     playsStream?: PlayStreamConfig;
     /** Tests that the AudioPlayer is stopped. */
