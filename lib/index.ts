@@ -10,4 +10,5 @@ export { SessionEndedRequestBuilder } from './factory/SessionEndedRequestBuilder
 export { AudioPlayerPauseIntentRequestBuilder, AudioPlayerResumeIntentRequestBuilder } from './factory/AudioIntentRequestBuilder';
 export { AplUserEventRequestBuilder } from './factory/AplUserEventRequestBuilder';
 export { PlaybackControllerRequestBuilder } from './factory/PlaybackControllerRequestBuilder';
+export { AudioPlayerRequestBuilder } from './factory/AudioPlayerRequestBuilder';
 export { SkillSettings, SequenceItem, ResponseValidator } from './types';
