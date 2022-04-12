@@ -90,6 +90,9 @@
 							<li>
 								<a href="factory_sessionendedrequestbuilder.sessionendedrequestbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SessionEndedRequestBuilder</a>
 							</li>
+							<li>
+								<a href="factory_sessionresumedrequestbuilder.sessionresumedrequestbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">SessionResumedRequestBuilder</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -107,6 +110,7 @@
 						<section class="tsd-index-section tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="factory_requestbuilder.requestbuilder.html#sessionattributes" class="tsd-kind-icon">session<wbr>Attributes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="factory_requestbuilder.requestbuilder.html#settings" class="tsd-kind-icon">settings</a></li>
 							</ul>
 						</section>
@@ -119,6 +123,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="factory_requestbuilder.requestbuilder.html#getsessiondata" class="tsd-kind-icon">get<wbr>Session<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="factory_requestbuilder.requestbuilder.html#modifyrequest" class="tsd-kind-icon">modify<wbr>Request</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="factory_requestbuilder.requestbuilder.html#withinterfaces" class="tsd-kind-icon">with<wbr>Interfaces</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="factory_requestbuilder.requestbuilder.html#withsessionattributes" class="tsd-kind-icon">with<wbr>Session<wbr>Attributes</a></li>
 							</ul>
 						</section>
 					</div>
@@ -136,7 +141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L11">factory/RequestBuilder.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L12">factory/RequestBuilder.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -153,12 +158,30 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="sessionattributes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> session<wbr>Attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">session<wbr>Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L12">factory/RequestBuilder.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="settings" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> settings</h3>
 					<div class="tsd-signature tsd-kind-icon">settings<span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.skillsettings.html" class="tsd-signature-type" data-tsd-kind="Interface">SkillSettings</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L11">factory/RequestBuilder.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L11">factory/RequestBuilder.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -175,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L23">factory/RequestBuilder.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L25">factory/RequestBuilder.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestEnvelope</span></h4>
@@ -192,7 +215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L50">factory/RequestBuilder.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L57">factory/RequestBuilder.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Request</span></h4>
@@ -209,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L67">factory/RequestBuilder.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L74">factory/RequestBuilder.ts:74</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Context</span></h4>
@@ -226,7 +249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L56">factory/RequestBuilder.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L63">factory/RequestBuilder.ts:63</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Session</span></h4>
@@ -243,7 +266,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L52">factory/RequestBuilder.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L59">factory/RequestBuilder.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -266,13 +289,41 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/142fa7b/lib/factory/RequestBuilder.ts#L34">factory/RequestBuilder.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L36">factory/RequestBuilder.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>iface: <a href="../interfaces/types.interfacesettings.html" class="tsd-signature-type" data-tsd-kind="Interface">InterfaceSettings</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="factory_requestbuilder.requestbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">RequestBuilder</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="withsessionattributes" class="tsd-anchor"></a>
+					<h3>with<wbr>Session<wbr>Attributes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">with<wbr>Session<wbr>Attributes<span class="tsd-signature-symbol">(</span>attributes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="factory_requestbuilder.requestbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">RequestBuilder</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/alf-ytakada/ask-sdk-test/blob/a28440e/lib/factory/RequestBuilder.ts#L52">factory/RequestBuilder.ts:52</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attributes: <span class="tsd-signature-symbol">{}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="factory_requestbuilder.requestbuilder.html" class="tsd-signature-type" data-tsd-kind="Class">RequestBuilder</a></h4>
@@ -310,6 +361,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/factory_sessionendedrequestbuilder.html">factory/<wbr>Session<wbr>Ended<wbr>Request<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/factory_sessionresumedrequestbuilder.html">factory/<wbr>Session<wbr>Resumed<wbr>Request<wbr>Builder</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/index.html">index</a>
@@ -360,6 +414,9 @@
 								<a href="factory_requestbuilder.requestbuilder.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="factory_requestbuilder.requestbuilder.html#sessionattributes" class="tsd-kind-icon">session<wbr>Attributes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 								<a href="factory_requestbuilder.requestbuilder.html#settings" class="tsd-kind-icon">settings</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -379,6 +436,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="factory_requestbuilder.requestbuilder.html#withinterfaces" class="tsd-kind-icon">with<wbr>Interfaces</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="factory_requestbuilder.requestbuilder.html#withsessionattributes" class="tsd-kind-icon">with<wbr>Session<wbr>Attributes</a>
 							</li>
 						</ul>
 					</li>

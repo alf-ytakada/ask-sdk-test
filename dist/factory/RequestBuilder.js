@@ -14,6 +14,7 @@ class RequestBuilder {
         if (!this.settings.interfaces.hasOwnProperty('audio')) {
             this.settings.interfaces.audio = true;
         }
+        this.sessionAttributes = {};
     }
     build() {
         const request = {
@@ -40,6 +41,10 @@ class RequestBuilder {
         }
         return this;
     }
+    withSessionAttributes(attributes) {
+        this.sessionAttributes = attributes;
+        return this;
+    }
     modifyRequest(request) {
         // override if needed
     }
@@ -48,7 +53,7 @@ class RequestBuilder {
             // randomized for every session and set before calling the handler
             sessionId: 'SessionId.00000000-0000-0000-0000-000000000000',
             application: { applicationId: this.settings.appId },
-            attributes: {},
+            attributes: this.sessionAttributes,
             user: { userId: this.settings.userId },
             new: true,
         };
