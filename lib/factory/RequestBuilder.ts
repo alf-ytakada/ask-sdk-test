@@ -9,6 +9,7 @@ import { InterfaceSettings, SkillSettings } from '../types';
 export abstract class RequestBuilder {
 
     protected settings : SkillSettings;
+    protected sessionAttributes : {[key : string] : any};
 
     constructor(settings : SkillSettings) {
         this.settings = JSON.parse(JSON.stringify(settings));
@@ -18,6 +19,7 @@ export abstract class RequestBuilder {
         if (!this.settings.interfaces.hasOwnProperty('audio')) {
             this.settings.interfaces.audio = true;
         }
+        this.sessionAttributes = {};
     }
 
     public build() : RequestEnvelope {
@@ -47,6 +49,11 @@ export abstract class RequestBuilder {
         return this;
     }
 
+    public withSessionAttributes(attributes : {[key : string] : any}) : RequestBuilder {
+        this.sessionAttributes = attributes;
+        return this;
+    }
+
     protected abstract buildRequest() : Request;
 
     protected modifyRequest(request : RequestEnvelope) : void {
@@ -58,7 +65,7 @@ export abstract class RequestBuilder {
             // randomized for every session and set before calling the handler
             sessionId: 'SessionId.00000000-0000-0000-0000-000000000000',
             application: {applicationId: this.settings.appId},
-            attributes: {},
+            attributes: this.sessionAttributes,
             user: {userId: this.settings.userId},
             new: true,
         };
