@@ -1,4 +1,4 @@
-import { RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
+import { Directive, RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
 export interface SkillSettings {
     /** The skill id */
     appId: string;
@@ -94,6 +94,8 @@ export interface SequenceItem {
     withProfile?: ProfileInfo;
     /** The accessToken to provide for account linking */
     withUserAccessToken?: string;
+    /** Test arbitrary directives */
+    directives?: Directive[];
     /** Any additional fields for custom validators */
     [key: string]: any;
 }

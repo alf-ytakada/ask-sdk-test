@@ -16,6 +16,7 @@ const AplValidator_1 = require("./AplValidator");
 const AudioPlayerValidator_1 = require("./AudioPlayerValidator");
 const CardValidator_1 = require("./CardValidator");
 const DialogValidator_1 = require("./DialogValidator");
+const DirectivesValidator_1 = require("./DirectivesValidator");
 const EndSessionValidator_1 = require("./EndSessionValidator");
 const QuestionMarkValidator_1 = require("./QuestionMarkValidator");
 const SessionAttributeValidator_1 = require("./SessionAttributeValidator");
@@ -56,6 +57,7 @@ class AlexaTest {
             new AudioPlayerValidator_1.AudioPlayerValidator(),
             new VideoAppValidator_1.VideoAppValidator(),
             new CardValidator_1.CardValidator(),
+            new DirectivesValidator_1.DirectivesValidator(),
         ];
     }
     addValidator(validator) {
