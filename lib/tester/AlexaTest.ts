@@ -129,7 +129,7 @@ export class AlexaTest {
 
             const request : RequestEnvelope = currentItem.request;
             request.session.new = (sequenceIndex === 0);
-            request.session.attributes = attributes ? JSON.parse(JSON.stringify(attributes)) : {};
+            // request.session.attributes = attributes ? JSON.parse(JSON.stringify(attributes)) : {};
             request.session.sessionId = settings.sessionId;
 
             // adds values from withSessionAttributes to the session
