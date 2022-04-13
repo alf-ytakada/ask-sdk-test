@@ -2,7 +2,7 @@
  * Copyright (c) 2018. Taimos GmbH http://www.taimos.de
  */
 
-import { RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
+import { Directive, RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
 
 export interface SkillSettings {
     /** The skill id */
@@ -100,6 +100,9 @@ export interface SequenceItem {
     withProfile? : ProfileInfo;
     /** The accessToken to provide for account linking */
     withUserAccessToken? : string;
+
+    /** Test arbitrary directives */
+    directives? : Directive[];
 
     /** Any additional fields for custom validators */
     [key : string] : any;

@@ -19,6 +19,7 @@ import { AplValidator } from './AplValidator';
 import { AudioPlayerValidator } from './AudioPlayerValidator';
 import { CardValidator } from './CardValidator';
 import { DialogValidator } from './DialogValidator';
+import { DirectivesValidator } from './DirectivesValidator';
 import { EndSessionValidator } from './EndSessionValidator';
 import { QuestionMarkValidator } from './QuestionMarkValidator';
 import { SessionAttributeValidator } from './SessionAttributeValidator';
@@ -72,6 +73,7 @@ export class AlexaTest {
             new AudioPlayerValidator(),
             new VideoAppValidator(),
             new CardValidator(),
+            new DirectivesValidator(),
         ];
     }
 
