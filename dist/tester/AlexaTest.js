@@ -108,7 +108,7 @@ class AlexaTest {
             const currentItem = sequence[sequenceIndex];
             const request = currentItem.request;
             request.session.new = (sequenceIndex === 0);
-            request.session.attributes = attributes ? JSON.parse(JSON.stringify(attributes)) : {};
+            // request.session.attributes = attributes ? JSON.parse(JSON.stringify(attributes)) : {};
             request.session.sessionId = settings.sessionId;
             // adds values from withSessionAttributes to the session
             if (currentItem.withSessionAttributes) {
