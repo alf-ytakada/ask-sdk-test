@@ -3,6 +3,7 @@ export { RequestBuilder } from './factory/RequestBuilder';
 export { IntentRequestBuilder } from './factory/IntentRequestBuilder';
 export { LaunchRequestBuilder } from './factory/LaunchRequestBuilder';
 export { SessionEndedRequestBuilder } from './factory/SessionEndedRequestBuilder';
+export { SessionResumedRequestBuilder } from './factory/SessionResumedRequestBuilder';
 export { AudioPlayerPauseIntentRequestBuilder, AudioPlayerResumeIntentRequestBuilder } from './factory/AudioIntentRequestBuilder';
 export { AplUserEventRequestBuilder } from './factory/AplUserEventRequestBuilder';
 export { PlaybackControllerRequestBuilder } from './factory/PlaybackControllerRequestBuilder';

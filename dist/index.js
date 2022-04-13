@@ -3,7 +3,7 @@
  * Copyright (c) 2018. Taimos GmbH http://www.taimos.de
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResponseValidator = exports.AudioPlayerRequestBuilder = exports.PlaybackControllerRequestBuilder = exports.AplUserEventRequestBuilder = exports.AudioPlayerResumeIntentRequestBuilder = exports.AudioPlayerPauseIntentRequestBuilder = exports.SessionEndedRequestBuilder = exports.LaunchRequestBuilder = exports.IntentRequestBuilder = exports.RequestBuilder = exports.AlexaTest = void 0;
+exports.ResponseValidator = exports.AudioPlayerRequestBuilder = exports.PlaybackControllerRequestBuilder = exports.AplUserEventRequestBuilder = exports.AudioPlayerResumeIntentRequestBuilder = exports.AudioPlayerPauseIntentRequestBuilder = exports.SessionResumedRequestBuilder = exports.SessionEndedRequestBuilder = exports.LaunchRequestBuilder = exports.IntentRequestBuilder = exports.RequestBuilder = exports.AlexaTest = void 0;
 var AlexaTest_1 = require("./tester/AlexaTest");
 Object.defineProperty(exports, "AlexaTest", { enumerable: true, get: function () { return AlexaTest_1.AlexaTest; } });
 var RequestBuilder_1 = require("./factory/RequestBuilder");
@@ -14,6 +14,8 @@ var LaunchRequestBuilder_1 = require("./factory/LaunchRequestBuilder");
 Object.defineProperty(exports, "LaunchRequestBuilder", { enumerable: true, get: function () { return LaunchRequestBuilder_1.LaunchRequestBuilder; } });
 var SessionEndedRequestBuilder_1 = require("./factory/SessionEndedRequestBuilder");
 Object.defineProperty(exports, "SessionEndedRequestBuilder", { enumerable: true, get: function () { return SessionEndedRequestBuilder_1.SessionEndedRequestBuilder; } });
+var SessionResumedRequestBuilder_1 = require("./factory/SessionResumedRequestBuilder");
+Object.defineProperty(exports, "SessionResumedRequestBuilder", { enumerable: true, get: function () { return SessionResumedRequestBuilder_1.SessionResumedRequestBuilder; } });
 var AudioIntentRequestBuilder_1 = require("./factory/AudioIntentRequestBuilder");
 Object.defineProperty(exports, "AudioPlayerPauseIntentRequestBuilder", { enumerable: true, get: function () { return AudioIntentRequestBuilder_1.AudioPlayerPauseIntentRequestBuilder; } });
 Object.defineProperty(exports, "AudioPlayerResumeIntentRequestBuilder", { enumerable: true, get: function () { return AudioIntentRequestBuilder_1.AudioPlayerResumeIntentRequestBuilder; } });
