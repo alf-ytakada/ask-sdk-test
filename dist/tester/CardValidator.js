@@ -19,7 +19,7 @@ class CardValidator extends types_1.ResponseValidator {
     hasSmallImageUrlLike? : string;
     hasLargeImageUrlLike? : string;
          */
-        var _a;
+        var _a, _b;
         if (currentItem.hasCardTitle) {
             if (!response.response.card || (response.response.card.type !== 'Simple' && response.response.card.type !== 'Standard')) {
                 assert_1.fail('the response did not contain a card');
@@ -111,7 +111,26 @@ class CardValidator extends types_1.ResponseValidator {
             }
             else {
                 if (((_a = response.response.card) === null || _a === void 0 ? void 0 : _a.type) === 'LinkAccount') {
-                    assert_1.fail('do not contain a link account card');
+                    assert_1.fail('response should not contain a link account card');
+                }
+            }
+        }
+        if (currentItem.hasAskForPermissionsConsentCard !== undefined) {
+            if (currentItem.hasLinkAccountCard) {
+                if (!response.response.card) {
+                    assert_1.fail('the response did not contain a card');
+                }
+                else if (response.response.card.type !== 'AskForPermissionsConsent') {
+                    assert_1.fail('the card in the response was not a AskForPermissionsConsent card');
+                }
+                // check permissions
+                if (currentItem.hasAskForPermissionsConsentCardPermissions) {
+                    chai_1.expect(response.response.card.permissions).to.be.deep.equal(currentItem.hasAskForPermissionsConsentCardPermissions);
+                }
+            }
+            else {
+                if (((_b = response.response.card) === null || _b === void 0 ? void 0 : _b.type) === 'AskForPermissionsConsent') {
+                    assert_1.fail('response should not contain a AskForPermissionsConsent card');
                 }
             }
         }

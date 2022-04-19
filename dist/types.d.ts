@@ -80,6 +80,10 @@ export interface SequenceItem {
     hasLargeImageUrlLike?: string;
     /** card.type = LinkAccount */
     hasLinkAccountCard?: boolean;
+    /** card.type = AskForPermissionsConsent */
+    hasAskForPermissionsConsentCard?: boolean;
+    /** card.type = AskForPermissionsConsent, permissions */
+    hasAskForPermissionsConsentCardPermissions?: string[];
     /** Tests that the AudioPlayer is used to play a stream. */
     playsStream?: PlayStreamConfig;
     /** Tests that the AudioPlayer is stopped. */
