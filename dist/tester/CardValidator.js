@@ -116,7 +116,7 @@ class CardValidator extends types_1.ResponseValidator {
             }
         }
         if (currentItem.hasAskForPermissionsConsentCard !== undefined) {
-            if (currentItem.hasLinkAccountCard) {
+            if (currentItem.hasAskForPermissionsConsentCard) {
                 if (!response.response.card) {
                     assert_1.fail('the response did not contain a card');
                 }
