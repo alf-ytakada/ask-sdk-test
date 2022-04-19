@@ -106,7 +106,7 @@ export class CardValidator extends ResponseValidator {
                 }
             }
         }
-        
+
         if (currentItem.hasAskForPermissionsConsentCard !== undefined) {
             if (currentItem.hasLinkAccountCard) {
                 if (!response.response.card) {
