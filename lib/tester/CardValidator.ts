@@ -102,7 +102,25 @@ export class CardValidator extends ResponseValidator {
                 }
             } else {
                 if (response.response.card?.type === 'LinkAccount') {
-                    fail('do not contain a link account card');
+                    fail('response should not contain a link account card');
+                }
+            }
+        }
+        
+        if (currentItem.hasAskForPermissionsConsentCard !== undefined) {
+            if (currentItem.hasLinkAccountCard) {
+                if (!response.response.card) {
+                    fail('the response did not contain a card');
+                } else if (response.response.card.type !== 'AskForPermissionsConsent') {
+                    fail('the card in the response was not a AskForPermissionsConsent card');
+                }
+                // check permissions
+                if (currentItem.hasAskForPermissionsConsentCardPermissions) {
+                    expect(response.response.card.permissions).to.be.deep.equal(currentItem.hasAskForPermissionsConsentCardPermissions);
+                }
+            } else {
+                if (response.response.card?.type === 'AskForPermissionsConsent') {
+                    fail('response should not contain a AskForPermissionsConsent card');
                 }
             }
         }
