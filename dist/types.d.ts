@@ -1,4 +1,4 @@
-import { Directive, RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
+import { Directive, RequestEnvelope, ResponseEnvelope } from "ask-sdk-model";
 export interface SkillSettings {
     /** The skill id */
     appId: string;
@@ -50,7 +50,7 @@ export interface SequenceItem {
     confirmsIntent?: boolean;
     /** Tests that the response contains the given attributes and values. Values can be strings, numbers, booleans or functions testing the value. */
     hasAttributes?: {
-        [key: string]: (string | number | boolean | ((attribute: any) => boolean));
+        [key: string]: string | number | boolean | ((attribute: any) => boolean);
     };
     /** The session attributes to initialize the intent request with. */
     withSessionAttributes?: {
@@ -58,7 +58,7 @@ export interface SequenceItem {
     };
     /** Tests that the given attributes were stored in the DynamoDB. Values can be strings, numbers, booleans or functions testing the value. */
     storesAttributes?: {
-        [key: string]: (string | number | boolean | ((attribute: any) => boolean));
+        [key: string]: string | number | boolean | ((attribute: any) => boolean);
     };
     /** The attributes to initialize the handler with. Used with DynamoDB mock. */
     withStoredAttributes?: {
@@ -112,7 +112,7 @@ export interface RenderDocumentConfig {
 }
 export interface AudioMetadata {
     title: string;
-    subtitle: string;
+    subtitle?: string;
     art?: {
         sources: Array<{
             url: string;
