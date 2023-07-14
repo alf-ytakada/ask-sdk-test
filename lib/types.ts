@@ -149,6 +149,8 @@ export interface PlayStreamConfig {
     urlExactMatch?: boolean;
     offset?: number;
     metadata?: AudioMetadata;
+    titleExactMatch?: boolean;
+    artExactMatch?: boolean;
 }
 
 export interface PlayVideoConfig {
