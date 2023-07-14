@@ -44,13 +44,13 @@ export class AudioPlayerValidator extends ResponseValidator {
             // check metadata
             if (playConfig.metadata) {
                 const metadata = playDirective.audioItem.metadata;
-                if(playConfig.titleExactMatch) {
+                if (playConfig.titleExactMatch) {
                     expect(metadata.title).to.be.equal(playConfig.metadata.title, 'metadata title did not match');
                 } else {
                     expect(metadata.title).to.be.not.null;
                 }
                 expect(metadata.subtitle).to.be.equal(playConfig.metadata.subtitle, 'metadata subtitle did not match');
-                if(playConfig.artExactMatch) {
+                if (playConfig.artExactMatch) {
                     expect(metadata.art).to.be.deep.equal(playConfig.metadata.art, 'metadata art did not match');
                 } else {
                     expect(metadata.art).to.be.not.null;
