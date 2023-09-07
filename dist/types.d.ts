@@ -1,4 +1,4 @@
-import { Directive, RequestEnvelope, ResponseEnvelope } from "ask-sdk-model";
+import { Directive, RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
 export interface SkillSettings {
     /** The skill id */
     appId: string;
