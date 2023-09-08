@@ -2,171 +2,173 @@
  * Copyright (c) 2018. Taimos GmbH http://www.taimos.de
  */
 
-import { Directive, RequestEnvelope, ResponseEnvelope } from "ask-sdk-model";
+import { Directive, RequestEnvelope, ResponseEnvelope } from 'ask-sdk-model';
 
 export interface SkillSettings {
     /** The skill id */
-    appId: string;
+    appId : string;
     /** The user id to simulate */
-    userId: string;
+    userId : string;
     /** The device id to simulate */
-    deviceId: string;
+    deviceId : string;
     /** the locale to use when generating requests */
-    locale: string;
+    locale : string;
     /** the interfaces present for the test */
-    interfaces?: InterfaceSettings;
+    interfaces? : InterfaceSettings;
     /** true to print the response to the console */
-    debug?: boolean;
+    debug? : boolean;
 }
 
 export interface InterfaceSettings {
-    display?: boolean;
-    audio?: boolean;
-    video?: boolean;
-    apl?: boolean;
+    display? : boolean;
+    audio? : boolean;
+    video? : boolean;
+    apl? : boolean;
 }
 
 export interface SequenceItem {
     /** The request to run. Generate these with one of the above `getFooRequest` methods. */
-    request: RequestEnvelope;
+    request : RequestEnvelope;
 
     /** Receives the response object from the request as a parameter. You can make custom checks against the response using any assertion library you like in here. */
-    callback?: (response: ResponseEnvelope) => void;
+    callback? : (response : ResponseEnvelope) => void;
     /** Tests that the speech output from the request is the string specified. */
-    says?: string | string[] | ((speech: string) => boolean);
+    says? : string | string[] | ((speech : string) => boolean);
     /** Tests that the speech output from the request contains the string specified. */
-    saysLike?: string;
+    saysLike? : string;
     /** If true, tests that the response has no speech output. */
-    saysNothing?: boolean;
+    saysNothing? : boolean;
     /** Tests that the reprompt output from the request is the string specified. */
-    reprompts?: string | string[] | ((speech: string) => boolean);
+    reprompts? : string | string[] | ((speech : string) => boolean);
     /** Tests that the reprompt output from the request contains the string specified. */
-    repromptsLike?: string;
+    repromptsLike? : string;
     /** If true, tests that the response has no reprompt output. */
-    repromptsNothing?: boolean;
+    repromptsNothing? : boolean;
     /** If true, tests that the response to the request ends or does not end the session. */
-    shouldEndSession?: boolean;
+    shouldEndSession? : boolean;
     /** If true, tests that the response speech contains a question mark when the session is kept open */
-    ignoreQuestionCheck?: boolean;
+    ignoreQuestionCheck? : boolean;
 
     /** Tests that the response asks Alexa to elicit the given slot. */
-    elicitsSlot?: string;
+    elicitsSlot? : string;
     /** Tests that the response asks Alexa to elicit the a slot of the given intent. */
-    elicitsForIntent?: string;
+    elicitsForIntent? : string;
     /** Tests that the response asks Alexa to confirm the given slot. */
-    confirmsSlot?: string;
+    confirmsSlot? : string;
     /** Tests that the response asks Alexa to confirm the intent. */
-    confirmsIntent?: boolean;
+    confirmsIntent? : boolean;
 
     /** Tests that the response contains the given attributes and values. Values can be strings, numbers, booleans or functions testing the value. */
-    hasAttributes?: {
-        [key: string]:
+    hasAttributes? : {
+        [key : string] :
             | string
             | number
             | boolean
-            | ((attribute: any) => boolean);
+            | ((attribute : any) => boolean);
     };
     /** The session attributes to initialize the intent request with. */
-    withSessionAttributes?: { [key: string]: any };
+    withSessionAttributes? : { [key : string] : any };
     /** Tests that the given attributes were stored in the DynamoDB. Values can be strings, numbers, booleans or functions testing the value. */
-    storesAttributes?: {
-        [key: string]:
+    storesAttributes? : {
+        [key : string] :
             | string
             | number
             | boolean
-            | ((attribute: any) => boolean);
+            | ((attribute : any) => boolean);
     };
     /** The attributes to initialize the handler with. Used with DynamoDB mock. */
-    withStoredAttributes?: { [key: string]: any };
+    withStoredAttributes? : { [key : string] : any };
 
     /** Tests that the card sent by the response has the title specified. */
-    hasCardTitle?: string;
+    hasCardTitle? : string;
     /** Tests that the card sent by the response is a simple card and has the content specified. */
-    hasCardContent?: string;
+    hasCardContent? : string;
     /** Tests that the card sent by the response is a simple card and contains the content specified. */
-    hasCardContentLike?: string;
+    hasCardContentLike? : string;
     /** Tests that the card sent by the response is a standard card and has the text specified. */
-    hasCardText?: string;
+    hasCardText? : string;
     /** Tests that the card sent by the response is a standard card and contains the text specified. */
-    hasCardTextLike?: string;
+    hasCardTextLike? : string;
     /** Tests that the card sent by the response is a standard card and has a small image URL containing the string specified. */
-    hasSmallImageUrlLike?: string;
+    hasSmallImageUrlLike? : string;
     /** Tests that the card sent by the response is a standard card and has a large image URL containing the string specified. */
-    hasLargeImageUrlLike?: string;
+    hasLargeImageUrlLike? : string;
     /** card.type = LinkAccount */
-    hasLinkAccountCard?: boolean;
+    hasLinkAccountCard? : boolean;
     /** card.type = AskForPermissionsConsent */
-    hasAskForPermissionsConsentCard?: boolean;
+    hasAskForPermissionsConsentCard? : boolean;
     /** card.type = AskForPermissionsConsent, permissions */
-    hasAskForPermissionsConsentCardPermissions?: string[];
+    hasAskForPermissionsConsentCardPermissions? : string[];
 
     /** Tests that the AudioPlayer is used to play a stream. */
-    playsStream?: PlayStreamConfig;
+    playsStream? : PlayStreamConfig;
     /** Tests that the AudioPlayer is stopped. */
-    stopsStream?: boolean;
+    stopsStream? : boolean;
     /** Tests that the AudioPlayer clears the queue with the given clear behavior. */
-    clearsQueue?: string;
+    clearsQueue? : string;
 
     /** Tests that the VideoPlayer is used to play a stream. */
-    playsVideo?: PlayVideoConfig;
+    playsVideo? : PlayVideoConfig;
     /** Tests that the RenderDirective is used to . */
-    renderDocument?: RenderDocumentConfig;
+    renderDocument? : RenderDocumentConfig;
 
     /** The profile information for API calls. Ups will be unauthorized when this is undefined */
-    withProfile?: ProfileInfo;
+    withProfile? : ProfileInfo;
     /** The accessToken to provide for account linking */
-    withUserAccessToken?: string;
+    withUserAccessToken? : string;
 
     /** Test arbitrary directives */
-    directives?: Directive[];
+    directives? : Directive[];
 
     /** Any additional fields for custom validators */
-    [key: string]: any;
+    [key : string] : any;
 }
 
 export interface RenderDocumentConfig {
-    token?: string;
-    document?: (document: any) => boolean;
-    hasDataSources?: { [key: string]: (datasource: any) => boolean };
+    token? : string;
+    document? : (document : any) => boolean;
+    hasDataSources? : { [key : string] : (datasource : any) => boolean };
 }
 
 export interface AudioMetadata {
-    title: string;
-    subtitle?: string;
+    title : string;
+    subtitle? : string;
     // https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/models/ask_sdk_model.interfaces.audioplayer.html#ask_sdk_model.interfaces.audioplayer.audio_item_metadata.AudioItemMetadata
-    art?: {
-        sources: Array<{
-            url: string;
+    art? : {
+        sources : Array<{
+            url : string;
         }>;
     };
 }
 
 export interface PlayStreamConfig {
-    behavior?: string;
-    token?: string;
-    previousToken?: string;
-    url?: string;
-    urlExactMatch?: boolean;
-    offset?: number;
-    metadata?: AudioMetadata;
+    behavior? : string;
+    token? : string;
+    previousToken? : string;
+    url? : string;
+    urlExactMatch? : boolean;
+    offset? : number;
+    metadata? : AudioMetadata;
+    titleExactMatch? : boolean;
+    artExactMatch? : boolean;
 }
 
 export interface PlayVideoConfig {
-    source?: string;
-    titel?: string;
-    subtitle?: string;
+    source? : string;
+    titel? : string;
+    subtitle? : string;
 }
 
 export interface ProfileInfo {
-    name?: string;
-    givenName?: string;
-    email?: string;
-    mobileNumber?: string;
+    name? : string;
+    givenName? : string;
+    email? : string;
+    mobileNumber? : string;
 }
 
 export abstract class ResponseValidator {
     public abstract validate(
-        currentItem: SequenceItem,
-        response: ResponseEnvelope
-    ): void;
+        currentItem : SequenceItem,
+        response : ResponseEnvelope,
+    ) : void;
 }
